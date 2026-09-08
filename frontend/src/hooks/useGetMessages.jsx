@@ -13,7 +13,7 @@ const useGetMessages = () => {
         if (!selectedUser?._id) return;
         axios.defaults.withCredentials = true;
         const res = await axios.get(
-          `http://localhost:3000/api/v1/message/${selectedUser?._id}`,
+          `https://chat-app-1-ltob.onrender.com/api/v1/message/${selectedUser?._id}`,
         );
         console.log("Messages:", res);
         dispatch(setMessages(res.data));

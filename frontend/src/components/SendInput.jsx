@@ -23,7 +23,7 @@ const { messages } = useSelector(store => store.message);
       axios.defaults.withCredentials = true;
 
       const res = await axios.post(
-        `http://localhost:3000/api/v1/message/send/${selectedUser._id}`,
+        `https://chat-app-1-ltob.onrender.com/api/v1/message/send/${selectedUser._id}`,
         { message },
       );
 
