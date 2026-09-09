@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
-import { setSelectedUsers } from "../redux/userSlice";
+
 
 const Message = ({message}) => {
     const scroll = useRef();

@@ -4,7 +4,7 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Signup from './components/Signup';
 import HomePage from './components/HomePage';
 import Login from './components/Login';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import io from 'socket.io-client';
 import { setSocket } from './redux/socketSlice';
@@ -48,7 +48,7 @@ function App() {
           dispatch(setSocket(null));
         }
       }
-  }, [authUser]);
+  }, [authUser, dispatch]);
   return (
     <div className="p-4 h-screen flex items-center justify-center">
       <RouterProvider router={router}/>
