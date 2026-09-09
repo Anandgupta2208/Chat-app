@@ -23,7 +23,9 @@ const { messages } = useSelector(store => store.message);
       axios.defaults.withCredentials = true;
 
       const res = await axios.post(
-        `https://chat-app-1-ltob.onrender.com/api/v1/message/send/${selectedUser._id}`,
+        `${process.env.NODE_ENV === "production"
+  ? "https://chat-app-1-ltob.onrender.com"
+  : "http://localhost:3000"}/api/v1/message/send/${selectedUser._id}`,
         { message },
       );
 

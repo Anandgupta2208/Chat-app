@@ -27,7 +27,9 @@ const app = express();
     const userId = socket.handshake.query.userId;
     if(userId !== undefined){
     userSocketMap[userId] = socket.id;
-    }
+    console.log("🔥 User ID:", userId);
+    console.log("🔥 Socket Map:", userSocketMap);
+}
      io.emit('getOnlineUsers', Object.keys(userSocketMap));
 
     socket.on('disconnect' , () => {

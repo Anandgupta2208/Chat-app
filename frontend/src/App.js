@@ -31,11 +31,16 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() =>{
       if(authUser){
-        const socket = io('https://chat-app-1-ltob.onrender.com', {
-             query: {
-              userId: authUser._id
-            }
-        });
+       const socket = io(
+  process.env.NODE_ENV === "production"
+    ? "https://chat-app-1-ltob.onrender.com"
+    : "http://localhost:3000",
+  {
+    query: {
+      userId: authUser._id
+    }
+  }
+);
         dispatch(setSocket(socket));
 
         socket.on('getOnlineUsers', (onlineUsers) =>{
