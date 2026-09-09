@@ -19,11 +19,15 @@ app.use(express.json());
 app.use(cookieParser());
 
 
-const corsOption = {
-    origin: 'http://localhost:3001',
-    credentials:true
-};
+const allowedOrigins = [
+    'http://localhost:3001',
+    'https://chat-app-six-lovat-24.vercel.app'
+];
 
+const corsOption = {
+    origin: allowedOrigins,
+    credentials: true
+};
 app.use(cors(corsOption));
 
 //routes
