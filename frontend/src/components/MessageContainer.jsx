@@ -1,13 +1,14 @@
 import SendInput from './SendInput'
 import Messages from './Messages'
 import { useSelector } from 'react-redux';
+import useGetRealTimeMessage from "../hooks/useGetRealTimeMessage";
 
 
 const MessageContainer = () => {
   const {selectedUser, authUser, onlineUsers} = useSelector(store => store.user);
 
   const isOnline = onlineUsers?.includes?.(selectedUser?._id);
- 
+   useGetRealTimeMessage();
   return (
     <>
     { selectedUser !== null ? (<div className='md:min-w-[550px] flex flex-col'>
