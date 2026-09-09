@@ -1,6 +1,6 @@
 import SendInput from './SendInput'
 import Messages from './Messages'
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 
 const MessageContainer = () => {

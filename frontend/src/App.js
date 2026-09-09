@@ -41,11 +41,9 @@ function App() {
         socket.on('getOnlineUsers', (onlineUsers) =>{
               dispatch(setOnlineUsers(onlineUsers));
         });
-        return()=> socket.close();
-      }else{
-        if(socket){
+        return()=>{ 
           socket.close();
-          dispatch(setSocket(null));
+           dispatch(setSocket(null));
         }
       }
   }, [authUser, dispatch]);
