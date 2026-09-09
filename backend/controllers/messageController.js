@@ -1,5 +1,4 @@
 
-import { isObjectIdOrHexString } from "mongoose";
 import { Conversation } from "../models/coversationModel.js";
 import { Message } from "../models/messageModel.js";
 import {io, getReceiverSocketId} from '../socket/socket.js'
