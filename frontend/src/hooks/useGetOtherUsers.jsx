@@ -22,7 +22,7 @@ const useGetOtherUsers = () => {
            }
        }
        fetchOtherUsers();
-     },[])
+     },[dispatch])
 }
 
 export default useGetOtherUsers

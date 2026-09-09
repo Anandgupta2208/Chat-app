@@ -23,7 +23,7 @@ const useGetMessages = () => {
       }
     };
     fatchMessages();
-  }, [selectedUser]);
+  }, [selectedUser, dispatch]);
 };
 
 export default useGetMessages;
