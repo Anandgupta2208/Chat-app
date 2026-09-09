@@ -11,6 +11,7 @@ const useGetRealTimeMessage = () => {
         if (!socket) return;
 
         const handleNewMessage = (newMessage) => {
+           console.log("🔥 REAL TIME MESSAGE RECEIVED:", newMessage);
             dispatch(setMessages([...messages, newMessage]));
         };
 
